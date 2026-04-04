@@ -32,9 +32,12 @@ Cadastro de Materiais v2 (CRUD + Calendar)
 ```
 
 ### Estudos:
-
+|               |
+| ------------- |
 |**Exemplos**<br>https://ui5.sap.com/#/entity/sap.ui.comp.smarttable.SmartTable|
 |**Exemplos 2**<br>https://ui5.sap.com/#/entity/sap.ui.comp.smarttable.SmartTable/sample/sap.ui.comp.sample.smarttable.mtableCustomToolbar|
 
 ### PROMPTS
-no sap fiori, quando crio o serviço de gateway de nome "ZGCAD_MAT270", para ler a tabela transparente ZCAD_MAT270 contendo os campos BUKRS, MATNR, MAKTX, MENGE, MEINS, na minha classe ZCL_ZGCAD_MAT270_DPC_EXT. Os campos chave são BUKRS e MATNR. Tenho um "Worklist.view.xml" vazio por enquanto. Como adicionar um smartTable com filtro nos campos "Bukrs" e "Matnr"?
+|               |
+| ------------- |
+|no sap fiori, quando crio o serviço de gateway de nome "ZGCAD_MAT270", para ler a tabela transparente ZCAD_MAT270 contendo os campos BUKRS, MATNR, MAKTX, MENGE, MEINS, na minha classe ZCL_ZGCAD_MAT270_DPC_EXT. Os campos chave são BUKRS e MATNR. Tenho um "Worklist.view.xml" vazio por enquanto. Como adicionar um smartTable com filtro nos campos "Bukrs" e "Matnr"?|
