@@ -1,7 +1,8 @@
 <mvc:View controllerName="cadmatv2.controller.Worklist"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    Worklist
+    <!-- <Page id="page" title="{i18n>title}">
         <content />
-    </Page>
+    </Page> -->
 </mvc:View>
