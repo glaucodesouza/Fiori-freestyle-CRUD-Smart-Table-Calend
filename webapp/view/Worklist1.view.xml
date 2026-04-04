@@ -1,38 +1,42 @@
-<mvc:View controllerName="cadmatv2.controller.Worklist"
+ <mvc:View controllerName="cadmatv2.controller.Worklist"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.f"
-    xmlns:smartTable="sap.ui.comp.smarttable"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:sv="sap.ui.comp.smartvariants"
     height="100%">
 
-    <f:DynamicPage id="dynamicPage">
+    <!--<f:DynamicPage id="dynamicPage1">
         <f:title>
-            <f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
+            <f:DynamicPageTitle id="_IDGenDynamicPageTitle11">
                 <f:heading>
-                    <Title id="_IDGenTitle" text="Gestão de Materiais (ZGCAD_MAT270)"/>
+                    <Title id="_IDGenTitle1" text="Gestão de Materiais (ZGCAD_MAT270)"/>
                 </f:heading>
             </f:DynamicPageTitle>
         </f:title>
 
         <f:header>
-            <f:DynamicPageHeader id="_IDGenDynamicPageHeader" pinnable="true">
+            <f:DynamicPageHeader id="_IDGenDynamicPageHeader1" pinnable="true">
                 <f:content>
                     <smartFilterBar:SmartFilterBar 
-                        id="smartFilterBar" 
+                        id="smartFilterBar1" 
                         entitySet="MaterialSet"
-                        persistencyKey="SmartFilter_Explored"
+                        persistencyKey="PKeyFilterMat270"
                         >
                         <smartFilterBar:controlConfiguration>
                             <smartFilterBar:ControlConfiguration 
-                                id="_IDGenControlConfiguration" 
-                                key="Bukrs" >
-                            </smartFilterBar:ControlConfiguration>
+                                id="_IDGenControlConfiguration11" 
+                                key="Bukrs" 
+                                label="Empresa"
+                                mandatory="mandatory"
+                                />
                             
                             <smartFilterBar:ControlConfiguration 
-                                id="_IDGenControlConfiguration1" 
-                                key="Matnr" >
-                            </smartFilterBar:ControlConfiguration>
+                                id="_IDGenControlConfiguration111" 
+                                key="Matnr" 
+                                label="Material"
+                                />
                         </smartFilterBar:controlConfiguration>
                     </smartFilterBar:SmartFilterBar>
                 </f:content>
@@ -41,41 +45,41 @@
 
         <f:content>
             <smartTable:SmartTable 
-                id="smartTable"
+                id="smartTable1"
                 entitySet="MaterialSet"
                 smartFilterId="smartFilterBar" 
                 tableType="ResponsiveTable"
                 enableExport="true"
-                useVariantManagement="false"
+                useVariantManagement="true"
                 useTablePersonalisation="true"
                 header="Lista de Materiais"
                 showRowCount="true"
                 enableAutoBinding="true"
                 class="sapUiResponsiveContentPadding"
-                persistencyKey="SmartFilter_Explored"
+                persistencyKey="PKeyFilterMat270"
                 initiallyVisibleFields="Bukrs,Matnr,Maktx,Menge,Meins,Datapromoini,Datapromofim">
                 
                 <smartTable:layoutData>
-                    <FlexItemData id="_IDGenFlexItemData" growFactor="1" baseSize="0%"/>
+                    <FlexItemData id="_IDGenFlexItemData1" growFactor="1" baseSize="0%"/>
                 </smartTable:layoutData>
-                
+                 
                 <Table 
-                    id="_IDGenTable"
+                    id="_IDGenTable1"
                     mode="SingleSelectLeft"    
                     >
                     <headerToolbar>
-                        <OverflowToolbar id="idOFT">
-                            <ToolbarSpacer id="idTBS" />
-                            <Button id='idDelButton' class='sapUiSmallMarginBeginEnd' type="Reject" icon="sap-icon://delete" text="Deletar" press="onDeletar"/>
+                        <OverflowToolbar id="idOFT1">
+                            <ToolbarSpacer id="idTBS1" />
+                            <Button id="idDelButton1" class='sapUiSmallMarginBeginEnd' type="Reject" icon="sap-icon://delete" text="Deletar" press="onDeletar"/>
                         </OverflowToolbar>
                     </headerToolbar>
                     <columns>
                         </columns>
                     <items>
-                        <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onPress"/>
+                        <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press="onPress"/>
                     </items>
                 </Table>
             </smartTable:SmartTable>
         </f:content>
-    </f:DynamicPage>
+    </f:DynamicPage>-->
 </mvc:View>

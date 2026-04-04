@@ -1,0 +1,71 @@
+<mvc:View controllerName="cadmatv2.controller.Worklist"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    height="100%">
+
+    <!-- <Page id="idPageWorklist2" title="Meus Materiais">
+        <content>
+            <VBox id="_IDGenVBox2">
+                <smartFilterBar:SmartFilterBar 
+                    id="smartFilterBar2" 
+                    entitySet="MaterialSet"
+                    persistencyKey="PKeyFilterMat270"
+                    >
+                    <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration 
+                            id="_IDGenControlConfiguration2" 
+                            key="Bukrs" 
+                            label="Empresa"
+                            mandatory="mandatory"
+                            />
+                        
+                        <smartFilterBar:ControlConfiguration 
+                            id="_IDGenControlConfiguration12" 
+                            key="Matnr" 
+                            label="Material"
+                            />
+                    </smartFilterBar:controlConfiguration>
+                </smartFilterBar:SmartFilterBar>
+
+                <smartTable:SmartTable 
+                    id="smartTable2"
+                    entitySet="MaterialSet"
+                    smartFilterId="smartFilterBar" 
+                    tableType="ResponsiveTable"
+                    enableExport="true"
+                    useVariantManagement="true"
+                    useTablePersonalisation="true"
+                    header="Lista de Materiais"
+                    showRowCount="true"
+                    enableAutoBinding="true"
+                    class="sapUiResponsiveContentPadding"
+                    persistencyKey="PKeyFilterMat270"
+                    initiallyVisibleFields="Bukrs,Matnr,Maktx,Menge,Meins,Datapromoini,Datapromofim">
+                    
+                    <smartTable:layoutData>
+                        <FlexItemData id="_IDGenFlexItemData2" growFactor="1" baseSize="0%"/>
+                    </smartTable:layoutData>
+                    
+                    <Table 
+                        id="_IDGenTable2"
+                        mode="SingleSelectLeft"    
+                        >
+                        <headerToolbar>
+                            <OverflowToolbar id="idOFT2">
+                                <ToolbarSpacer id="idTBS2" />
+                                <Button id='idDelButton2' class='sapUiSmallMarginBeginEnd' type="Reject" icon="sap-icon://delete" text="Deletar" press="onDeletar"/>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            </columns>
+                        <items>
+                            <ColumnListItem id="_IDGenColumnListItem2" type="Navigation" press="onPress"/>
+                        </items>
+                    </Table>
+                </smartTable:SmartTable>
+            </VBox>
+        </content>
+    </Page> -->
+</mvc:View>

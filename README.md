@@ -35,7 +35,8 @@ Cadastro de Materiais v2 (CRUD + Calendar)
 |               |
 | ------------- |
 |**Exemplos**<br>https://ui5.sap.com/#/entity/sap.ui.comp.smarttable.SmartTable|
-|**Exemplos 2**<br>https://ui5.sap.com/#/entity/sap.ui.comp.smarttable.SmartTable/sample/sap.ui.comp.sample.smarttable.mtableCustomToolbar|
+|**Exemplos SmartTable+Filter**<br>https://ui5.sap.com/#/entity/sap.ui.comp.smarttable.SmartTable/sample/sap.ui.comp.sample.smarttable.mtableCustomToolbar|
+|**Exemplos YOUTUBE**<br>https://www.youtube.com/watch?v=7GN4SimtV18|
 
 ### PROMPTS
 |               |
