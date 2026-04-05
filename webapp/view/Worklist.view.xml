@@ -8,7 +8,7 @@
 
     <f:DynamicPage id="dynamicPage">
         <f:title>
-            <f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
+            <f:DynamicPageTitle id="_IDGenDynamicPageTitle1" >
                 <f:heading>
                     <Title id="_IDGenTitle" text="Gestão de Materiais (ZGCAD_MAT270)"/>
                 </f:heading>
@@ -16,22 +16,24 @@
         </f:title>
 
         <f:header>
-            <f:DynamicPageHeader id="_IDGenDynamicPageHeader" pinnable="true">
+            <f:DynamicPageHeader id="_IDGenDynamicPageHeader" >
                 <f:content>
                     <smartFilterBar:SmartFilterBar 
                         id="smartFilterBar" 
                         entitySet="MaterialSet"
                         persistencyKey="SmartFilter_Explored"
-                        >
+                        initialise="onFilterBarInitialise">
                         <smartFilterBar:controlConfiguration>
                             <smartFilterBar:ControlConfiguration 
                                 id="_IDGenControlConfiguration" 
-                                key="Bukrs" >
+                                key="Bukrs" 
+                                visible="true">
                             </smartFilterBar:ControlConfiguration>
                             
                             <smartFilterBar:ControlConfiguration 
                                 id="_IDGenControlConfiguration1" 
-                                key="Matnr" >
+                                key="Matnr" 
+                                visible="true">
                             </smartFilterBar:ControlConfiguration>
                         </smartFilterBar:controlConfiguration>
                     </smartFilterBar:SmartFilterBar>
@@ -46,7 +48,7 @@
                 smartFilterId="smartFilterBar" 
                 tableType="ResponsiveTable"
                 enableExport="true"
-                useVariantManagement="false"
+                useVariantManagement="true"
                 useTablePersonalisation="true"
                 header="Lista de Materiais"
                 showRowCount="true"
