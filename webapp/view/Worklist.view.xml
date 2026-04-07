@@ -3,7 +3,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.f"
     xmlns:smartTable="sap.ui.comp.smarttable"
-    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:fb="sap.ui.comp.filterbar"
     height="100%">
 
     <f:DynamicPage id="dynamicPage">
@@ -18,25 +18,32 @@
         <f:header>
             <f:DynamicPageHeader id="_IDGenDynamicPageHeader" >
                 <f:content>
-                    <smartFilterBar:SmartFilterBar 
-                        id="smartFilterBar" 
-                        entitySet="MaterialSet"
-                        persistencyKey="SmartFilter_Explored"
-                        initialise="onFilterBarInitialise">
-                        <smartFilterBar:controlConfiguration>
-                            <smartFilterBar:ControlConfiguration 
-                                id="_IDGenControlConfiguration" 
-                                key="Bukrs" 
-                                visible="true">
-                            </smartFilterBar:ControlConfiguration>
-                            
-                            <smartFilterBar:ControlConfiguration 
-                                id="_IDGenControlConfiguration1" 
-                                key="Matnr" 
-                                visible="true">
-                            </smartFilterBar:ControlConfiguration>
-                        </smartFilterBar:controlConfiguration>
-                    </smartFilterBar:SmartFilterBar>
+
+                <fb:FilterBar id="filterBar" header="Filtros" search=".onSearch" showRestoreButton="true">
+                    <fb:filterGroupItems>
+                        <fb:FilterGroupItem id="_IDGenFilterGroupItem" 
+                            name="Bukrs" 
+                            label="Empresa" 
+                            groupName="Group1" 
+                            visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="inputBukrs" placeholder="Digite a empresa..." maxLength="4" />
+                            </fb:control>
+                        </fb:FilterGroupItem>
+
+                        <fb:FilterGroupItem id="_IDGenFilterGroupItem1" 
+                            name="Matnr" 
+                            label="Material" 
+                            groupName="Group1" 
+                            visibleInFilterBar="true">
+                            <fb:control>
+                                <Input id="inputMatnr" placeholder="Digite o código do material..." />
+                            </fb:control>
+                        </fb:FilterGroupItem>
+
+                    </fb:filterGroupItems>
+                </fb:FilterBar>
+
                 </f:content>
             </f:DynamicPageHeader>
         </f:header>
@@ -45,7 +52,6 @@
             <smartTable:SmartTable 
                 id="smartTable"
                 entitySet="MaterialSet"
-                smartFilterId="smartFilterBar" 
                 tableType="ResponsiveTable"
                 enableExport="true"
                 useVariantManagement="true"
@@ -55,6 +61,7 @@
                 enableAutoBinding="true"
                 class="sapUiResponsiveContentPadding"
                 persistencyKey="SmartFilter_Explored"
+                beforeRebindTable="onBeforeRebindTable"
                 initiallyVisibleFields="Bukrs,Matnr,Maktx,Menge,Meins,Datapromoini,Datapromofim">
                 
                 <smartTable:layoutData>

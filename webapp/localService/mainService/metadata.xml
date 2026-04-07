@@ -7,13 +7,13 @@
                     <PropertyRef Name="Bukrs"/>
                     <PropertyRef Name="Matnr"/>
                 </Key>
-                <Property Name="Bukrs" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Bukrs"/>
-                <Property Name="Matnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Matnr"/>
-                <Property Name="Maktx" Type="Edm.String" sap:unicode="false" sap:label="Maktx"/>
-                <Property Name="Menge" Type="Edm.String" sap:unicode="false" sap:label="Menge"/>
-                <Property Name="Meins" Type="Edm.String" sap:unicode="false" sap:label="Meins"/>
-                <Property Name="Datapromoini" Type="Edm.String" sap:unicode="false" sap:label=""/>
-                <Property Name="Datapromofim" Type="Edm.String" sap:unicode="false" sap:label=""/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Bukrs" sap:filterable="true"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Matnr" sap:filterable="true"/>
+                <Property Name="Maktx" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Maktx"/>
+                <Property Name="Menge" Type="Edm.String" MaxLength="13" sap:unicode="false" sap:unit="Meins" sap:label="Menge"/>
+                <Property Name="Meins" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Meins" sap:semantics="unit-of-measure"/>
+                <Property Name="Datapromoini" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label=""/>
+                <Property Name="Datapromofim" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label=""/>
             </EntityType>
             <EntityType Name="UnidadeDeMedidaSH" sap:content-version="1">
                 <Key>
