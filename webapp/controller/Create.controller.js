@@ -40,6 +40,51 @@ sap.ui.define([
 
             onCancelar: function () {
                 history.go(-1);
+            },
+
+            onGravar: function (oEvent) {
+
+            let oModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZGCAD_MAT270_SRV/");
+
+			//coletar valores do elemento da tela usando metodos get de propriedades
+			let sBukrs = this.byId('txtCreateBukrs').getValue();
+			let sMatnr = this.byId('txtCreateMatnr').getValue();
+			let sMaktx = this.byId('txtCreateMaktx').getValue();
+			let sMenge = this.byId('txtCreateMenge').getValue();
+			let sMeins = this.byId('txtCreateMeins').getValue();
+
+			let sPath = `/MaterialSet`;
+
+			let oDadosGravar = {
+				Bukrs: sBukrs,
+				Matnr: sMatnr,
+				Maktx: sMaktx,
+				Menge: sMenge,
+				Meins: sMeins
+			};
+
+			oModel.create(sPath, oDadosGravar, {
+				success: function (oDadosRetorno, resposta) {
+                    this.limparTodosCamposTela();
+					// Força o refresh de todas as agregações ligadas a este modelo OData
+					this.getView().getModel().refresh(true);
+
+					MessageBox.success('Material foi criado com sucesso!');
+					history.go(-1);
+				}.bind(this),
+				error: function (oError) {
+					MessageBox.error(`Erro ao gravar ` + oError.message);
+				}.bind(this),
+			    });
+		    },
+
+            limparTodosCamposTela: function () {
+                //limpar valores
+                this.byId('txtCreateBukrs').setValue('');
+                this.byId('txtCreateMatnr').setValue('');
+                this.byId('txtCreateMaktx').setValue('');
+                this.byId('txtCreateMenge').setValue('');
+                this.byId('txtCreateMeins').setValue('');
             }
         });
     });

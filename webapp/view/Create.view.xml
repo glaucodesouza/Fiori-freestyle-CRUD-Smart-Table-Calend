@@ -80,6 +80,7 @@
 
         <!-- Custom Footer Content-->
         <semantic:footerCustomActions>
+            <Button id="_IDGenButton72" type="Accept" text="Gravar" press="onGravar" />
             <Button id="_IDGenButton82" type="Reject" text="Cancelar" press="onCancelar" />
         </semantic:footerCustomActions>	
 
