@@ -99,7 +99,12 @@
           "target": [
             "TargetWorklist"
           ]
-        }
+        },
+        {
+					"name": "object",
+					"pattern": "MaterialSet/{Bukrs}/{Matnr}",
+					"target": ["object"]
+				}
       ],
       "targets": {
         "TargetWorklist": {
@@ -108,7 +113,16 @@
           "clearControlAggregation": false,
           "viewId": "Worklist",
           "viewName": "Worklist"
-        }
+        },
+        "object": {
+					"viewName": "Object",
+					"viewId": "object",
+					"viewLevel": 2,
+					"title": "Object Page",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false
+				}
       }
     },
     "rootView": {

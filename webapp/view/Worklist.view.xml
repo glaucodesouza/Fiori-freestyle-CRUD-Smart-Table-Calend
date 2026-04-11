@@ -81,7 +81,7 @@
                     <columns>
                         </columns>
                     <items>
-                        <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onPress"/>
+                        <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onTableLinePress"/>
                     </items>
                 </Table>
             </smartTable:SmartTable>

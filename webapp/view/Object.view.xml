@@ -1,0 +1,88 @@
+<mvc:View controllerName="cadmatv2.controller.Object"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic">
+
+	<semantic:SemanticPage
+		id="objectPage"
+		showFooter="true"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}">
+
+		<semantic:titleHeading>
+			<Title id="_IDGenTitle1"
+				text="{Bukrs}"
+				level="H2"/>
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+			<ObjectNumber id="_IDGenObjectNumber1"
+				unit="{Matnr}"
+			/>
+		</semantic:headerContent>
+
+		<l:VerticalLayout id="_IDGenVerticalLayout" width="100%">
+            <f:SimpleForm id="_IDGenSimpleForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"
+                >
+                
+                <Label id="_IDGenLabel" text="Empresa" />
+                <Text 
+                    id='txtBukrs' 
+                    text="{Bukrs}" 
+                />
+
+                <Label id="_IDGenLabel1" text="Material" />
+                <Text  
+                    id='txtMatnr'
+                    text="{Matnr}" 
+                />
+
+                <Label id="_IDGenLabel2" text="Descrição" />
+                <Text  
+                    id='txtMaktx'
+                    text="{Maktx}"
+                />	
+                
+                <Label id="_IDGenLabel3" text="Quantidade" />
+                <Text  
+                    id='txtMenge'
+                    text="{Menge}"
+                />
+
+                <Label id="_IDGenLabel4" text="UM" />
+                <Text
+                    id='txtMeins'
+                    text="{Meins}"
+                />
+            </f:SimpleForm>					
+
+	    </l:VerticalLayout>
+
+        <!-- Custom Footer Content-->
+        <semantic:footerCustomActions>
+            <Button id="_IDGenButton8" type="Reject" text="Cancelar" press="onCancelar" />
+        </semantic:footerCustomActions>	
+
+	</semantic:SemanticPage>
+
+</mvc:View>

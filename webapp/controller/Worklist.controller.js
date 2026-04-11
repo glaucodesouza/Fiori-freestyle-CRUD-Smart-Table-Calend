@@ -13,11 +13,13 @@ sap.ui.define([
             onInit: function () {
 
             },
+
             onFilterBarInitialise: function (oEvent) {
                 let oSmartFilter = oEvent.getSource();
                 // Agora é seguro usar oSmartFilter.getFilters()
                 console.log("SmartFilterBar pronto para uso!");
             },
+            
             onSearch: function () {
                 // 1. Captura os valores dos inputs definidos no XML
                 var sBukrs = this.getView().byId("inputBukrs").getValue();
@@ -71,8 +73,15 @@ sap.ui.define([
                 // Sua lógica de delete aqui
             },
 
-            onPress: function(oEvent) {
-                // Sua lógica de navegação aqui
+            onTableLinePress: function(oEvent) {
+                // NAVIGATE: 
+                // The source is the table item that got pressed
+                let oItem = oEvent.getSource();
+
+                this.getOwnerComponent().getRouter().navTo("object", {
+                    Bukrs: oItem.getBindingContext().getProperty("Bukrs"),
+                    Matnr: oItem.getBindingContext().getProperty("Matnr")
+                });
             }
         });
     });
