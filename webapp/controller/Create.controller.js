@@ -12,6 +12,11 @@ sap.ui.define([
             onInit: function () {
                 let oRouter = this.getOwnerComponent().getRouter();
                 oRouter.getRoute("object").attachPatternMatched(this._onObjectMatched, this);
+
+                //Guardar formatador p/ data SAP
+                this._oSAPFormatoData = sap.ui.core.format.DateFormat.getInstance({
+                    pattern: "yyyyMMdd"
+                });
             },
 
             /**
@@ -58,19 +63,17 @@ sap.ui.define([
 			let oDatapromoini = this.byId('txtCreateDatapromoini').getDateValue();
 			let oDatapromofim = this.byId('txtCreateDatapromofim').getDateValue();
 
-            let oDateFormat = sap.ui.core.format.DateFormat.getInstance({
-                pattern: "yyyyMMdd"
-            });
+
 
             let sDatapromoini = '';
             let sDatapromofim = '';
 
             if (oDatapromoini) {
-                sDatapromoini = oDateFormat.format(oDatapromoini); // Retorna "20260411"
+                sDatapromoini = this._oSAPFormatoData.format(oDatapromoini); // Retorna "20260411"
             }
             
             if (oDatapromofim) {
-                sDatapromofim = oDateFormat.format(oDatapromofim);
+                sDatapromofim = this._oSAPFormatoData.format(oDatapromofim);
             }
             //Fim ler datas
 
