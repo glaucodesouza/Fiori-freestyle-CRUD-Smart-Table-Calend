@@ -74,6 +74,24 @@
                     id='txtCreateMeins'
                     value=""
                 />
+
+                <Label id="_IDGenLabel52" text="UM" />
+                <DatePicker
+                    id='txtCreateDatapromoini'
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="yyyy-MM-ddTHH:mm:ss"
+                    placeholder="DD/MM/AAAA"
+                    value=""
+                />
+
+                <Label id="_IDGenLabel62" text="UM" />
+                <DatePicker
+                    id='txtCreateDatapromofim'
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="yyyy-MM-ddTHH:mm:ss"
+                    placeholder="DD/MM/AAAA"
+                    value=""
+                />
             </f:SimpleForm>					
 
 	    </l:VerticalLayout>

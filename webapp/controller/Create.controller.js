@@ -1,10 +1,11 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller, MessageToast) {
         "use strict";
 
         return Controller.extend("cadmatv2.controller.Create", {
@@ -53,6 +54,26 @@ sap.ui.define([
 			let sMenge = this.byId('txtCreateMenge').getValue();
 			let sMeins = this.byId('txtCreateMeins').getValue();
 
+            //Ler datas
+			let oDatapromoini = this.byId('txtCreateDatapromoini').getDateValue();
+			let oDatapromofim = this.byId('txtCreateDatapromofim').getDateValue();
+
+            let oDateFormat = sap.ui.core.format.DateFormat.getInstance({
+                pattern: "yyyyMMdd"
+            });
+
+            let sDatapromoini = '';
+            let sDatapromofim = '';
+
+            if (oDatapromoini) {
+                sDatapromoini = oDateFormat.format(oDatapromoini); // Retorna "20260411"
+            }
+            
+            if (oDatapromofim) {
+                sDatapromofim = oDateFormat.format(oDatapromofim);
+            }
+            //Fim ler datas
+
 			let sPath = `/MaterialSet`;
 
 			let oDadosGravar = {
@@ -60,7 +81,9 @@ sap.ui.define([
 				Matnr: sMatnr,
 				Maktx: sMaktx,
 				Menge: sMenge,
-				Meins: sMeins
+				Meins: sMeins,
+                Datapromoini: sDatapromoini,
+                Datapromofim: sDatapromofim
 			};
 
 			oModel.create(sPath, oDadosGravar, {
@@ -69,11 +92,11 @@ sap.ui.define([
 					// Força o refresh de todas as agregações ligadas a este modelo OData
 					this.getView().getModel().refresh(true);
 
-					MessageBox.success('Material foi criado com sucesso!');
+					MessageToast.show('Material foi criado com sucesso!');
 					history.go(-1);
 				}.bind(this),
 				error: function (oError) {
-					MessageBox.error(`Erro ao gravar ` + oError.message);
+					MessageToast.show(`Erro ao gravar ` + oError.message);
 				}.bind(this),
 			    });
 		    },
@@ -85,6 +108,8 @@ sap.ui.define([
                 this.byId('txtCreateMaktx').setValue('');
                 this.byId('txtCreateMenge').setValue('');
                 this.byId('txtCreateMeins').setValue('');
+                this.byId('txtCreateDatapromoini').setValue(null);
+                this.byId('txtCreateDatapromofim').setValue(null);
             }
         });
     });

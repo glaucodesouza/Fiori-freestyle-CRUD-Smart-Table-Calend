@@ -96,18 +96,24 @@
         {
           "name": "RouteWorklist",
           "pattern": ":?query:",
-          "target": ["TargetWorklist"]
+          "target": [
+            "TargetWorklist"
+          ]
         },
         {
-					"name": "object",
-					"pattern": "MaterialSet/{Bukrs}/{Matnr}",
-					"target": ["object"]
-				},
+          "name": "object",
+          "pattern": "MaterialSet/{Bukrs}/{Matnr}",
+          "target": [
+            "object"
+          ]
+        },
         {
-					"name": "create",
-					"pattern": "MaterialSet",
-					"target": ["create"]
-				}
+          "name": "create",
+          "pattern": "MaterialSet",
+          "target": [
+            "create"
+          ]
+        }
       ],
       "targets": {
         "TargetWorklist": {
@@ -118,23 +124,23 @@
           "viewName": "Worklist"
         },
         "object": {
-					"viewName": "Object",
-					"viewId": "object",
-					"viewLevel": 2,
-					"title": "Object Page",
+          "viewName": "Object",
+          "viewId": "object",
+          "viewLevel": 2,
+          "title": "Object Page",
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false
-				},
+        },
         "create": {
-					"viewName": "Create",
-					"viewId": "create",
-					"viewLevel": 2,
-					"title": "Create Page",
+          "viewName": "Create",
+          "viewId": "create",
+          "viewLevel": 2,
+          "title": "Create Page",
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false
-				}
+        }
       }
     },
     "rootView": {
