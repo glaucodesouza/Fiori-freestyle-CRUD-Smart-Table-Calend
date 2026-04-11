@@ -96,14 +96,17 @@
         {
           "name": "RouteWorklist",
           "pattern": ":?query:",
-          "target": [
-            "TargetWorklist"
-          ]
+          "target": ["TargetWorklist"]
         },
         {
 					"name": "object",
 					"pattern": "MaterialSet/{Bukrs}/{Matnr}",
 					"target": ["object"]
+				},
+        {
+					"name": "create",
+					"pattern": "MaterialSet",
+					"target": ["create"]
 				}
       ],
       "targets": {
@@ -119,6 +122,15 @@
 					"viewId": "object",
 					"viewLevel": 2,
 					"title": "Object Page",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false
+				},
+        "create": {
+					"viewName": "Create",
+					"viewId": "create",
+					"viewLevel": 2,
+					"title": "Create Page",
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false

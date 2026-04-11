@@ -82,6 +82,12 @@ sap.ui.define([
                     Bukrs: oItem.getBindingContext().getProperty("Bukrs"),
                     Matnr: oItem.getBindingContext().getProperty("Matnr")
                 });
+            },
+
+            onCriar: function(oEvent) {
+                // NAVIGATE:
+                this.getOwnerComponent().getRouter().navTo("create", {
+                });
             }
         });
     });
