@@ -52,58 +52,55 @@ sap.ui.define([
 
             onGravar: function (oEvent) {
 
-            let oModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZGCAD_MAT270_SRV/");
+                let oModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZGCAD_MAT270_SRV/");
 
-			//coletar valores do elemento da tela usando metodos get de propriedades
-			let sBukrs = this.byId('txtCreateBukrs').getValue();
-			let sMatnr = this.byId('txtCreateMatnr').getValue();
-			let sMaktx = this.byId('txtCreateMaktx').getValue();
-			let sMenge = this.byId('txtCreateMenge').getValue();
-			let sMeins = this.byId('txtCreateMeins').getValue();
+                //coletar valores do elemento da tela usando metodos get de propriedades
+                let sBukrs = this.byId('txtUpdateBukrs').getValue();
+                let sMatnr = this.byId('txtUpdateMatnr').getValue();
+                let sMaktx = this.byId('txtUpdateMaktx').getValue();
+                let sMenge = this.byId('txtUpdateMenge').getValue();
+                let sMeins = this.byId('txtUpdateMeins').getValue();
 
-            //Ler datas
-			let oDatapromoini = this.byId('txtCreateDatapromoini').getDateValue();
-			let oDatapromofim = this.byId('txtCreateDatapromofim').getDateValue();
+                //Ler datas
+                let oDatapromoini = this.byId('txtUpdateDatapromoini').getDateValue();
+                let oDatapromofim = this.byId('txtUpdateDatapromofim').getDateValue();
 
+                let sDatapromoini = '';
+                let sDatapromofim = '';
 
+                if (oDatapromoini) {
+                    sDatapromoini = this._oSAPFormatoData.format(oDatapromoini); // Retorna "20260411"
+                }
+                
+                if (oDatapromofim) {
+                    sDatapromofim = this._oSAPFormatoData.format(oDatapromofim);
+                }
+                //Fim ler datas
 
-            let sDatapromoini = '';
-            let sDatapromofim = '';
+                let sPath = `/MaterialSet(Bukrs='` + sBukrs + `',Matnr='` + sMatnr + `')`;
 
-            if (oDatapromoini) {
-                sDatapromoini = this._oSAPFormatoData.format(oDatapromoini); // Retorna "20260411"
-            }
-            
-            if (oDatapromofim) {
-                sDatapromofim = this._oSAPFormatoData.format(oDatapromofim);
-            }
-            //Fim ler datas
+                let oDadosGravar = {
+                    Bukrs: sBukrs,
+                    Matnr: sMatnr,
+                    Maktx: sMaktx,
+                    Menge: sMenge,
+                    Meins: sMeins,
+                    Datapromoini: sDatapromoini,
+                    Datapromofim: sDatapromofim
+                };
 
-			let sPath = `/MaterialSet`;
-
-			let oDadosGravar = {
-				Bukrs: sBukrs,
-				Matnr: sMatnr,
-				Maktx: sMaktx,
-				Menge: sMenge,
-				Meins: sMeins,
-                Datapromoini: sDatapromoini,
-                Datapromofim: sDatapromofim
-			};
-
-			oModel.create(sPath, oDadosGravar, {
-				success: function (oDadosRetorno, resposta) {
-                    this.limparTodosCamposTela();
-					// Força o refresh de todas as agregações ligadas a este modelo OData
-					this.getView().getModel().refresh(true);
-					MessageToast.show('Material foi criado com sucesso!');
-					history.go(-1);
-				}.bind(this),
-				error: function (oError) {
-                    this.limparTodosCamposTela();
-					MessageToast.show(`Erro ao gravar ` + oError.message);
-				}.bind(this),
-			    });
+                oModel.update(sPath, oDadosGravar, {
+                    success: function (oDadosRetorno, resposta) {
+                        // Força o refresh de todas as agregações ligadas a este modelo OData
+                        this.getView().getModel().refresh(true);
+                        MessageToast.show('Material foi modificado com sucesso!');
+                        history.go(-1);
+                    }.bind(this),
+                    error: function (oError) {
+                        this.limparTodosCamposTela();
+                        MessageToast.show(`Erro ao gravar ` + oError.message);
+                    }.bind(this),
+                });
 		    },
 
             limparTodosCamposTela: function () {

@@ -57,18 +57,52 @@ sap.ui.define([
             },
 
             onBeforeRebindTable: function (oEvent) {
-                var mBindingParams = oEvent.getParameter("bindingParams");
-                var sBukrs = this.getView().byId("inputBukrs").getValue();
-                var sMatnr = this.getView().byId("inputMatnr").getValue();
+                let oBindingParams = oEvent.getParameter("bindingParams");
+                let sBukrs = this.getView().byId("inputBukrs").getValue();
+                let sMatnr = this.getView().byId("inputMatnr").getValue();
 
                 if (sBukrs) {
-                    mBindingParams.filters.push(new Filter("Bukrs", FilterOperator.EQ, sBukrs));
+                    oBindingParams.filters.push(new Filter("Bukrs", FilterOperator.EQ, sBukrs));
                 }
                 if (sMatnr) {
-                    mBindingParams.filters.push(new Filter("Matnr", FilterOperator.EQ, sMatnr));
+                    oBindingParams.filters.push(new Filter("Matnr", FilterOperator.EQ, sMatnr));
+                }
+
+                // Força o OData a trazer esses campos, mesmo que a SmartTable não os "veja"
+                if (oBindingParams.parameters.select) {
+                    let sSelect = oBindingParams.parameters.select;
+                    if (sSelect.indexOf("Datapromoini") === -1) {
+                        oBindingParams.parameters.select += ",Datapromoini";
+                    }
+                    if (sSelect.indexOf("Datapromofim") === -1) {
+                        oBindingParams.parameters.select += ",Datapromofim";
+                    }
                 }
             },
 
+            // Função de formatação de datas no Table antes de carregar o Table
+            formatarDataVindoDoSAP: function (vDate) {
+                if (!vDate || vDate === "" || vDate === "00000000") {
+                    return "00/00/0000";
+                }
+                
+                //------------------------------------------------------------
+                // O SAP manda a data como string AAAAMMDD (8 caracteres), 
+                // Então precisamos converter para Date primeiro
+                // Por que? A tabela transparente está format DATS corretamente
+                // MAS o OData (SEGW) está como EDM.String (sem formato).
+                //------------------------------------------------------------
+                if (typeof vDate === "string" && vDate.length === 8) {
+                    let sYear = vDate.substring(0, 4);
+                    let sMonth = vDate.substring(4, 6);
+                    let sDay = vDate.substring(6, 8);
+                    vDate = new Date(sYear, sMonth - 1, sDay);
+                }
+
+                let oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({ pattern: "dd/MM/yyyy" });
+                return oDateFormat.format(new Date(vDate));
+            },
+           
             onDeletar: function() {
                 // Sua lógica de delete aqui
             },

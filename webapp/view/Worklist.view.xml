@@ -81,9 +81,30 @@
                         </OverflowToolbar>
                     </headerToolbar>
                     <columns>
-                        </columns>
+                        <Column id="colDataIni">
+                            <customData>
+                                <core:CustomData xmlns:core="sap.ui.core" key="p13nData" 
+                                    value='{"columnKey": "Datapromoini", "leadingProperty": "Datapromoini", "columnIndex": 5}' />
+                            </customData>
+                            <Text id="txtDatapromoini" text="Data Início" />
+                        </Column>
+                        
+                        <Column id="colDataFim">
+                            <customData>
+                                <core:CustomData xmlns:core="sap.ui.core" key="p13nData" 
+                                    value='{"columnKey": "Datapromofim", "leadingProperty": "Datapromofim", "columnIndex": 6}' />
+                            </customData>
+                            <Text id="txtDatapromofim" text="Data Fim" />
+                        </Column>
+                    </columns>
                     <items>
-                        <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onTableLinePress"/>
+                        <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onTableLinePress">
+                            <cells>
+                                <Text id="txtDatapromoini2" text="{path: 'Datapromoini', formatter: '.formatarDataVindoDoSAP'}" />
+                                
+                                <Text id="txtDatapromofim2" text="{path: 'Datapromofim', formatter: '.formatarDataVindoDoSAP'}" />
+                            </cells>
+                        </ColumnListItem>
                     </items>
                 </Table>
             </smartTable:SmartTable>

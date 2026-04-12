@@ -14,23 +14,23 @@
             <l:VerticalLayout id="_IDGenVerticalLayout1" width="100%">
                 <f:SimpleForm id="_IDGenSimpleForm1" editable="true" layout="ResponsiveGridLayout">
                     <Label id="_IDGenLabel5" text="Empresa" />
-                    <Input id="_IDGenInput" value="{Bukrs}" editable="false" /> 
+                    <Input id="txtUpdateBukrs" value="{Bukrs}" editable="false" /> 
                     
                     <Label id="_IDGenLabel6" text="Material" />
-                    <Input id="_IDGenInput1" value="{Matnr}" editable="false" />
+                    <Input id="txtUpdateMatnr" value="{Matnr}" editable="false" />
 
                     <Label id="_IDGenLabel7" text="Descrição" />
-                    <Input id="_IDGenInput2" value="{Maktx}" />
+                    <Input id="txtUpdateMaktx" value="{Maktx}" />
                     
                     <Label id="_IDGenLabel8" text="Quantidade" />
-                    <Input id="_IDGenInput3" value="{Menge}" />
+                    <Input id="txtUpdateMenge" value="{Menge}" />
 
                     <Label id="_IDGenLabel9" text="Unidade de Medida" />
-                    <Input id="_IDGenInput4" value="{Meins}" />
+                    <Input id="txtUpdateMeins" value="{Meins}" />
 
                     <Label id="_IDGenLabel10" text="Início da promoção" />
                     <DatePicker
-                        id='txtCreateDatapromoini3'
+                        id='txtUpdateDatapromoini'
                         displayFormat="dd/MM/yyyy"
                         valueFormat="yyyy-MM-ddTHH:mm:ss"
                         placeholder="DD/MM/AAAA"
@@ -39,7 +39,7 @@
 
                     <Label id="_IDGenLabel11" text="Fim da promoção" />
                     <DatePicker
-                        id='txtCreateDatapromofim3'
+                        id='txtUpdateDatapromofim'
                         displayFormat="dd/MM/yyyy"
                         valueFormat="yyyy-MM-ddTHH:mm:ss"
                         placeholder="DD/MM/AAAA"
