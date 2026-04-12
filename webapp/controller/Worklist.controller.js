@@ -104,7 +104,34 @@ sap.ui.define([
             },
            
             onDeletar: function() {
-                // Sua lógica de delete aqui
+                
+                let oModel = this.getView().getModel();
+                let oTable = this.byId("table");
+                let aSelectedItems = oTable.getSelectedItems();
+                let sPath = ``;
+
+                if (!aSelectedItems || aSelectedItems.length == 0) {
+                    sap.m.MessageToast.show('Nenhuma linha selecionada!');
+                    return;
+                } else if (!!aSelectedItems && aSelectedItems.length > 1) {
+                    sap.m.MessageToast.show('Selecionar apenas uma linha!');
+                    return;
+                } else {
+
+                    aSelectedItems.forEach(function(oItem){
+                        let oData = oItem.getBindingContext().getObject();
+                        sPath = `/MaterialSet(Bukrs='${oData.Bukrs}',Matnr='${oData.Matnr}')`;
+                    });
+
+                    oModel.remove(sPath, {
+                        success: function(oData){
+                            sap.m.MessageToast.show('Material Deletado com sucesso!');
+                        },
+                        error: function(oError){
+                            sap.m.MessageToast.show('Erro ao deletar Material!');
+                        }
+                    });
+                }
             },
 
             onTableLinePress: function(oEvent) {

@@ -69,7 +69,7 @@
                 </smartTable:layoutData>
                 
                 <Table 
-                    id="_IDGenTable"
+                    id="table"
                     mode="SingleSelectLeft"    
                     >
                     <headerToolbar>
