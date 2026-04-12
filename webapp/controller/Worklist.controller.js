@@ -151,11 +151,23 @@ sap.ui.define([
                 });
             },
 
-            onEdit: function(oEvent) {
-                let oItem = oEvent.getSource().getBindingContext();
+            onEditar: function(oEvent) {
+
+                let oTable = this.byId("table");
+                let aSelectedItems = oTable.getSelectedItems();
+                let sBukrs = '';
+                let sMatnr = '';
+
+                //Ler campos da linha selecionada
+                aSelectedItems.forEach(function(oItem){
+                    let oData = oItem.getBindingContext().getObject();
+                    sBukrs = oData.Bukrs;
+                    sMatnr = oData.Matnr;
+                });
+
                 this.getOwnerComponent().getRouter().navTo("update", {
-                    Bukrs: oItem.getProperty("Bukrs"),
-                    Matnr: oItem.getProperty("Matnr")
+                    Bukrs: sBukrs,
+                    Matnr: sMatnr
                 });
             }
         });

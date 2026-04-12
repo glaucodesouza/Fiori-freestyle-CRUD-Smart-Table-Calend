@@ -76,7 +76,7 @@
                         <OverflowToolbar id="idOFT">
                             <ToolbarSpacer id="idTBS" />
                             <Button id='idCreateButton' class='sapUiSmallMarginBeginEnd' type="Accept"  icon="sap-icon://create"    text="Criar"    press="onCriar"/>
-                            <Button id='idUpdateButton' class='sapUiSmallMarginBeginEnd'                icon="sap-icon://edit"      text="Editar"   press="onEdit" />
+                            <Button id='idUpdateButton' class='sapUiSmallMarginBeginEnd'                icon="sap-icon://edit"      text="Editar"   press="onEditar" />
                             <Button id='idDeleleButton' class='sapUiSmallMarginBeginEnd' type="Reject"  icon="sap-icon://delete"    text="Deletar"  press="onDeletar"/>
                         </OverflowToolbar>
                     </headerToolbar>
