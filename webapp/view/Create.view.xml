@@ -75,7 +75,7 @@
                     value=""
                 />
 
-                <Label id="_IDGenLabel52" text="UM" />
+                <Label id="_IDGenLabel52" text="Início da promoçao" />
                 <DatePicker
                     id='txtCreateDatapromoini'
                     displayFormat="dd/MM/yyyy"
@@ -84,7 +84,7 @@
                     value=""
                 />
 
-                <Label id="_IDGenLabel62" text="UM" />
+                <Label id="_IDGenLabel62" text="Fim da promoção" />
                 <DatePicker
                     id='txtCreateDatapromofim'
                     displayFormat="dd/MM/yyyy"

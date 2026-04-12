@@ -8,10 +8,10 @@ sap.ui.define([
     function (Controller, MessageToast) {
         "use strict";
 
-        return Controller.extend("cadmatv2.controller.Create", {
+        return Controller.extend("cadmatv2.controller.Update", {
             onInit: function () {
                 let oRouter = this.getOwnerComponent().getRouter();
-                oRouter.getRoute("object").attachPatternMatched(this._onObjectMatched, this);
+                oRouter.getRoute("update").attachPatternMatched(this._onObjectMatched, this);
 
                 //Guardar formatador p/ data SAP
                 this._oSAPFormatoData = sap.ui.core.format.DateFormat.getInstance({
@@ -27,11 +27,13 @@ sap.ui.define([
              */
             _onObjectMatched: function (oEvent) {
 
+                let sBukrs = oEvent.getParameter("arguments").Bukrs;
+                let sMatnr = oEvent.getParameter("arguments").Matnr;
                 let oView = this.getView();
 
                 //Binding da página com o material
                 oView.bindElement({
-                    path: "/MaterialSet",
+                    path: "/MaterialSet(Bukrs='" + sBukrs + "',Matnr='" + sMatnr + "')",
                     events: {
                         dataRequested: function () {
                             oView.setBusy(true);

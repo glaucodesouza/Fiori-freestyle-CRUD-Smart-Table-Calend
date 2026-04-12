@@ -113,6 +113,13 @@
           "target": [
             "create"
           ]
+        },
+        {
+          "name": "update",
+          "pattern": "MaterialSet/{Bukrs}/{Matnr}/edit",
+          "target": [
+            "update"
+          ]
         }
       ],
       "targets": {
@@ -137,6 +144,15 @@
           "viewId": "create",
           "viewLevel": 2,
           "title": "Create Page",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false
+        },
+        "update": {
+          "viewName": "Update",
+          "viewId": "update",
+          "viewLevel": 3,
+          "title": "Update Page",
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false

@@ -42,6 +42,14 @@ sap.ui.define([
 
             onCancelar: function () {
                 history.go(-1);
+            },
+
+            onEdit: function() {
+                let oContext = this.getView().getBindingContext();
+                this.getOwnerComponent().getRouter().navTo("update", {
+                    Bukrs: oContext.getProperty("Bukrs"),
+                    Matnr: oContext.getProperty("Matnr")
+                });
             }
         });
     });

@@ -88,6 +88,14 @@ sap.ui.define([
                 // NAVIGATE:
                 this.getOwnerComponent().getRouter().navTo("create", {
                 });
+            },
+
+            onEdit: function(oEvent) {
+                let oItem = oEvent.getSource().getBindingContext();
+                this.getOwnerComponent().getRouter().navTo("update", {
+                    Bukrs: oItem.getProperty("Bukrs"),
+                    Matnr: oItem.getProperty("Matnr")
+                });
             }
         });
     });

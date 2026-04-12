@@ -74,12 +74,33 @@
                     id='txtMeins'
                     text="{Meins}"
                 />
+
+                <Label id="_IDGenLabel520" text="Início da promoçao" />
+                <DatePicker
+                    id='txtObjectDatapromoini'
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="yyyy-MM-ddTHH:mm:ss"
+                    placeholder="DD/MM/AAAA"
+                    value="{Datapromoini}"
+                    editable="false"
+                />
+
+                <Label id="_IDGenLabel521" text="Fim da promoção" />
+                <DatePicker
+                    id='txtObjectDatapromofim'
+                    displayFormat="dd/MM/yyyy"
+                    valueFormat="yyyy-MM-ddTHH:mm:ss"
+                    placeholder="DD/MM/AAAA"
+                    value="{Datapromofim}"
+                    editable="false"
+                />
             </f:SimpleForm>					
 
 	    </l:VerticalLayout>
 
         <!-- Custom Footer Content-->
         <semantic:footerCustomActions>
+            <Button id="_IDGenButton820" icon="sap-icon://edit"      text="Editar"   press="onEdit" />
             <Button id="_IDGenButton8" type="Reject" text="Cancelar" press="onCancelar" />
         </semantic:footerCustomActions>	
 
