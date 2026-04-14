@@ -43,6 +43,9 @@ Cadastro de Materiais v2 (CRUD + Calendar)
 | ------------- |
 |no sap fiori, quando crio o serviço de gateway de nome "ZGCAD_MAT270", para ler a tabela transparente ZCAD_MAT270 contendo os campos BUKRS, MATNR, MAKTX, MENGE, MEINS, na minha classe ZCL_ZGCAD_MAT270_DPC_EXT. Os campos chave são BUKRS e MATNR. Tenho um "Worklist.view.xml" vazio por enquanto. Como adicionar um smartTable com filtro nos campos "Bukrs" e "Matnr"?|
 
+### SAPUI5 sap component page
+https://ui5.sap.com/#/entity/sap.m.PlanningCalendar/sample/sap.m.sample.PlanningCalendar/code
+
 ### App Screenshots
 
 ![alt text](image.png)

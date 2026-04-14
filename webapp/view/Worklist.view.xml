@@ -1,6 +1,7 @@
 <mvc:View controllerName="cadmatv2.controller.Worklist"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns:f="sap.f"
     xmlns:smartTable="sap.ui.comp.smarttable"
     xmlns:fb="sap.ui.comp.filterbar"

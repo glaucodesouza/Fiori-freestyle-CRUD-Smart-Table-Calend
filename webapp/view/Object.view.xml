@@ -101,7 +101,8 @@
         <!-- Custom Footer Content-->
         <semantic:footerCustomActions>
             <Button id="_IDGenButton820" icon="sap-icon://edit"      text="Editar"   press="onEdit" />
-            <Button id="_IDGenButton8" type="Reject" text="Cancelar" press="onCancelar" />
+            <Button id="_IDGenButton821" text="Promoção" press="onPromocao" />
+            <Button id="_IDGenButton8"   type="Reject" text="Cancelar" press="onCancelar" />
         </semantic:footerCustomActions>	
 
 	</semantic:SemanticPage>

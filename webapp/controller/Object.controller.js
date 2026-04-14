@@ -50,6 +50,16 @@ sap.ui.define([
                     Bukrs: oContext.getProperty("Bukrs"),
                     Matnr: oContext.getProperty("Matnr")
                 });
+            },
+
+            onPromocao: function(){
+                let oContext = this.getView().getBindingContext();
+                this.getOwnerComponent().getRouter().navTo("calendario", {
+                    Bukrs: oContext.getProperty("Bukrs"),
+                    Matnr: oContext.getProperty("Matnr"),
+                    Datapromoini: oContext.getProperty("Datapromoini"),
+                    Datapromofim: oContext.getProperty("Datapromofim")
+                });
             }
         });
     });

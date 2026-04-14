@@ -1,0 +1,36 @@
+<mvc:View
+	controllerName="cadmatv2.controller.Calendario"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:unified="sap.ui.unified"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+
+			<VBox id="_IDGenVBox14" class="sapUiSmallMargin">
+                <PlanningCalendar
+                    id="PC1"
+                    startDate="{path: 'calendar>/startDate'}"
+                    rows="{path: 'calendar>/matnr'}"
+                    showEmptyIntervalHeaders="false"
+                    showWeekNumbers="true">
+                    <rows>
+                        <PlanningCalendarRow id="_IDGenPlanningCalendarRow4"
+                            icon="{calendar>pic}"
+                            title="{calendar>name}"
+                            text="{calendar>role}"
+                            appointments="{path : 'calendar>appointments', templateShareable: false}">
+                            <appointments>
+                                <unified:CalendarAppointment id="_IDGenCalendarAppointment4"
+                                    startDate="{calendar>start}"
+                                    endDate="{calendar>end}"
+                                    icon="{calendar>pic}"
+                                    title="{calendar>title}"
+                                    type="{calendar>type}"
+                                    tentative="{calendar>tentative}">
+                                </unified:CalendarAppointment>
+                            </appointments>
+                        </PlanningCalendarRow>
+                    </rows>
+                </PlanningCalendar>
+            </VBox>
+</mvc:View>

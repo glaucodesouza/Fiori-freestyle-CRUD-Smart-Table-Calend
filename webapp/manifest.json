@@ -120,6 +120,13 @@
           "target": [
             "update"
           ]
+        },
+        {
+          "name": "calendario",
+          "pattern": "MaterialSet/{Bukrs}/{Matnr}/{Datapromoini}/{Datapromofim}",
+          "target": [
+            "calendario"
+          ]
         }
       ],
       "targets": {
@@ -153,6 +160,15 @@
           "viewId": "update",
           "viewLevel": 3,
           "title": "Update Page",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false
+        },
+        "calendario": {
+          "viewName": "Calendario",
+          "viewId": "calendario",
+          "viewLevel": 3,
+          "title": "Calendário Page",
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false
