@@ -10,7 +10,7 @@
                 <PlanningCalendar
                     id="PC1"
                     startDate="{path: 'calendar>/startDate'}"
-                    rows="{path: 'calendar>/matnr'}"
+                    rows="{path: 'calendar>/myRows'}"
                     showEmptyIntervalHeaders="false"
                     showWeekNumbers="true">
                     <rows>
