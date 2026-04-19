@@ -73,6 +73,8 @@
                 <Input
                     id='txtCreateMeins'
                     value=""
+                    showValueHelp="true"
+                    valueHelpRequest="onValueHelpRequest"
                 />
 
                 <Label id="_IDGenLabel52" text="Início da promoçao" />
